@@ -1,6 +1,6 @@
 package com.sergio.metodos;
 
-public class Libros {
+public class Libros implements Comparable {
 
     String titulo;
     String autor;
@@ -64,5 +64,17 @@ public class Libros {
         return "titulo= " + titulo + "\n autor=" + autor + "\n isbn=" + isbn + "\n prezo=" + prezo + "\n nunidades=" + nunidades;
     }
 
+    @Override
+   public int compareTo(Object c){
+       Libros l = (Libros) c;
+       if(titulo.compareToIgnoreCase(l.getTitulo())>0)
+            return 1;
+        else if(titulo.compareToIgnoreCase(l.getTitulo())==0)
+            return 0;
+        else
+            return -1;
+    }
+   }
+
     
-}
+

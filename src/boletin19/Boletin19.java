@@ -1,6 +1,5 @@
 package boletin19;
 
-import com.sergio.metodos.Libros;
 import com.sergio.metodos.Metodos;
 import javax.swing.JOptionPane;
 
@@ -22,25 +21,20 @@ do{
                                + "5: Consultar Libro\n"
                                + "6: Salir\n"));
      switch(op){
-         case 1: M1.engadirlibro(new Libros(
-                 JOptionPane.showInputDialog("Inserte Titulo"),
-                 JOptionPane.showInputDialog("Inserte Autor"),
-                 JOptionPane.showInputDialog("Inserte ISBN"),
-                 Integer.parseInt(JOptionPane.showInputDialog("Inserte Precio")),
-                 Integer.parseInt(JOptionPane.showInputDialog("Inserte o numero de unidades"))));
+         case 1: M1.engadirlibro();
                     break;
-         
-         case 2: M1.venderlibro((JOptionPane.showInputDialog("Inserte el ISBN de el libro a vender")));
+         case 2: M1.venderlibro();
                     break;
-         case 3: 
-         case 4: M1.darDeBaixa(Integer.parseInt(JOptionPane.showInputDialog("Inserte el libro que desea dar de baja")));
+         case 3: M1.amosar();
                     break;
-         case 5: M1.consultar(Integer.parseInt(JOptionPane.showInputDialog("Inserte el libro a consultar")));
+         case 4: M1.darDeBaixa();
+                    break;
+         case 5: M1.consultar();
                     break;
          case 6: System.exit(0);
                     break;
 
-}}while(op<=6);
+}}while(op>=6);
     
     }
 }
